@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: petclinic
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Parkgyuseong12/petclinic-k8s-manifests.git
+    targetRevision: HEAD
+    path: k8s-manifests/base
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: petclinic
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
