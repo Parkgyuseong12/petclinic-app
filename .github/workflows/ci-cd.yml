@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE_NAME: parkgyuseong12/petclinic
+  DOCKER_IMAGE_NAME: parkgyu/petclinic
   MANIFEST_REPO: Parkgyuseong12/petclinic-k8s-manifests
 
 jobs:
